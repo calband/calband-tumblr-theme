@@ -1,4 +1,20 @@
+// fonts
+@trajan-eot: "http://static.tumblr.com/mw6enpa/tFcn1yvf9/trajanpro-regular.eot";
+@trajan-eot-iefix: "http://static.tumblr.com/mw6enpa/tFcn1yvf9/trajanpro-regular.eot#iefix";
+@trajan-svg: "http://static.tumblr.com/mw6enpa/Topn1yvi7/trajanpro-regular.svg#svgTrajan-Pro-Regular";
+@trajan-ttf: "http://static.tumblr.com/mw6enpa/fFYn1yvj1/trajanpro-regular.ttf";
+@trajan-woff: "http://static.tumblr.com/mw6enpa/XXAn1yvjv/trajanpro-regular.woff";
+
+@font-face {
+    font-family: 'Trajan Pro';
+    src: url(@trajan-eot); /* IE9 Compat Modes */
+    src: url(@trajan-eot-iefix) format('embedded-opentype'), /* IE6-IE8 */
+         url(@trajan-woff) format('woff'), /* Modern Browsers */
+         url(@trajan-ttf)  format('truetype'), /* Safari, Android, iOS */
+         url(@trajan-svg) format('svg'); /* Legacy iOS */
+}
+
+// styles
 body {
-	background-color: red;
-	font: none;
+    font-family: "Trajan Pro", "Garamond", times, serif;
 }
