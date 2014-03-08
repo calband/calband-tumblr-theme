@@ -7,8 +7,8 @@ blockquote:before,blockquote:after,q:before,q:after{content:'';content:none;}
 table{border-collapse:collapse;border-spacing:0;}
 @font-face{font-family:'Trajan Pro';src:url("http://static.tumblr.com/mw6enpa/tFcn1yvf9/trajanpro-regular.eot");src:url("http://static.tumblr.com/mw6enpa/tFcn1yvf9/trajanpro-regular.eot#iefix") format('embedded-opentype'), url("http://static.tumblr.com/mw6enpa/XXAn1yvjv/trajanpro-regular.woff") format('woff'), url("http://static.tumblr.com/mw6enpa/fFYn1yvj1/trajanpro-regular.ttf") format('truetype'), url("http://static.tumblr.com/mw6enpa/Topn1yvi7/trajanpro-regular.svg#svgTrajan-Pro-Regular") format('svg');}.wrap{display:block;width:960px;height:100%;margin:0 auto;}
 .left,.right{display:inline-block;margin-top:50px;vertical-align:top;}
-.left{width:288px;margin-right:144px;}
-.right{width:528px;}
+.left{position:fixed;width:288px;margin-right:144px;}
+.right{width:528px;margin-left:432px;}
 .title,.subtitle,h2,.link{font-family:"Trajan Pro","Garamond",times,serif;color:#292e70;text-transform:uppercase;}
 .title,.subtitle{text-align:right;}
 .title{font-size:27px;height:30px;line-height:30px;}
@@ -21,5 +21,6 @@ table{border-collapse:collapse;border-spacing:0;}
 h2{display:block;width:100%;font-size:16px;height:25px;line-height:25px;border-bottom:1px solid #fbbe0f;margin-bottom:10px;}
 .more ul{display:inline-block;width:144px;vertical-align:top;}.more ul .link{display:block;font-size:14px;height:20px;line-height:20px;}.more ul .link a,.more ul .link a:visited,.more ul .link a:active{color:inherit;text-decoration:none;cursor:pointer;}
 .more ul .link a:hover{color:#373d95;}
-.main-paragraph-container p{font-family:"Georgia",times,serif;font-size:14px;line-height:18px;color:#222;margin:10px 0;}
-.post .video{display:block;width:100%;border-left:1px solid #eee;border-right:1px solid #eee;margin-bottom:30px;}.post .video iframe{display:block;margin:0 auto;}
+.main-paragraph-container p{font-family:"Georgia",times,serif;font-size:14px;line-height:18px;color:#222222;margin:10px 0;}
+.post{margin-bottom:50px;}.post .video{display:block;width:100%;border-left:1px solid #eee;border-right:1px solid #eee;margin-bottom:30px;}.post .video iframe{display:block;margin:0 auto;}
+.post .info{display:block;color:#222222;}.post .info .info-inner{display:inline-block;margin-right:20px;height:30px;line-height:30px;font-size:11px;font-family:"Open Sans","Helvetica Neue",helvetica,sans-serif;}.post .info .info-inner:last-child{margin-right:0;}
