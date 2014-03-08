@@ -1,3 +1,9 @@
+@import "utils.less";
+@import "reset.less";
+
+// assets
+@highstepper-image: "http://static.tumblr.com/mw6enpa/lqMn22inc/calband-tumblr-highstepper.png";
+
 // fonts
 @trajan-eot: "http://static.tumblr.com/mw6enpa/tFcn1yvf9/trajanpro-regular.eot";
 @trajan-eot-iefix: "http://static.tumblr.com/mw6enpa/tFcn1yvf9/trajanpro-regular.eot#iefix";
@@ -15,6 +21,147 @@
 }
 
 // styles
-body {
+
+
+@main-width: 960px;
+.wrap {
+    display: block;
+    width: @main-width;
+    height: 100%;
+    margin: 0 auto;
+}
+
+@left-column-width: @main-width * .3;
+@center-gutter-width: @main-width * .15;
+@right-column-width: @main-width * .55;
+@top-margin: 50px;
+.left, .right {
+    display: inline-block;
+    margin-top: @top-margin;
+    vertical-align: top;
+}
+
+.left {
+    width: @left-column-width;
+    margin-right: @center-gutter-width;
+}
+
+.right {
+    width: @right-column-width;
+}
+
+@calband-blue: #292e70;
+@calband-gold: #fbbe0f;
+
+.title, .subtitle, h2, .link {
     font-family: "Trajan Pro", "Garamond", times, serif;
+    color: @calband-blue;
+    text-transform: uppercase;
+}
+
+.title, .subtitle {
+    text-align: right;
+}
+
+.title {
+    font-size: 27px;
+    .height(30px);
+}
+
+.subtitle {
+    font-size: 13px;
+    .height(24px);
+}
+
+.divider {
+    .divider(5px, 5px, @calband-gold);
+}
+
+@highstepper-width: 57px;
+@highstepper-height: 100px;
+.header {
+    margin-bottom: 50px;
+    position: relative;
+
+    &:after {
+        content: "";
+        display: block;
+        width: @highstepper-width;
+        height: @highstepper-height;
+
+        position: absolute;
+        left: @left-column-width + 15px;
+        top: -28px; // this seems to be the value that looks the best
+
+        background-image: url(@highstepper-image);
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+    }
+}
+
+.about {
+    margin-bottom: 40px;
+
+    p {
+        font-family: "Open Sans", "Helvetica Neue", helvetica, sans-serif;
+        font-size: 12px;
+        line-height: 14px;
+    }
+}
+
+h2 {
+    display: block;
+    width: 100%;
+    font-size: 16px;
+    .height(25px);
+    border-bottom: 1px solid @calband-gold;
+    margin-bottom: 10px;
+}
+
+.more {
+    ul {
+        display: inline-block;
+        width: @left-column-width / 2;
+        vertical-align: top;
+
+        .link {
+            display: block;
+            font-size: 14px;
+            .height(20px);
+
+            a, a:visited, a:active {
+                color: inherit;
+                text-decoration: none;
+                cursor: pointer;
+            }
+            a:hover {
+                color: lighten(@calband-blue, 10%);
+            }
+        }
+    }
+}
+
+.main-paragraph-container p {
+    font-family: "Georgia", times, serif;
+    font-size: 14px;
+    line-height: 18px;
+    color: #222;
+
+    margin: 10px 0;
+}
+
+.post {
+    .video {
+        display: block;
+        width: 100%;
+        border-left: 1px solid #eee;
+        border-right: 1px solid #eee;
+        margin-bottom: 30px;
+
+        iframe {
+            display: block;
+            margin: 0 auto;
+        }
+    }
 }

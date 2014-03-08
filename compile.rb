@@ -8,6 +8,7 @@ styles = styles.gsub(/"/, "'")
 styles = styles.gsub(/\\/, "\\") # "\" => "\\"
 styles = styles.gsub("/", '\\/') # "/" => "\/"
 styles = styles.gsub(/\&/, "\&") # "\" => "\\"
-cmd = "sed \"s/!__COMPILE_CSS/" + styles + "/g\" index.html.tumblr > index.html"
+styles = styles.gsub("\n", "") # "\" => "\\"
+cmd = "sed \"s/{!__COMPILE_CSS}/" + styles + "/g\" index.template.html > index.html"
 system(cmd)
 puts "done."
