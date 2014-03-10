@@ -23,7 +23,11 @@
 @sans: "Open Sans", "Helvetica Neue", helvetica, sans-serif;
 
 // styles
-
+a.nostyle {
+    color: inherit;
+    text-decoration: none;
+    cursor: pointer;
+}
 
 @main-width: 960px;
 .wrap {
@@ -57,7 +61,7 @@
 @calband-blue: #292e70;
 @calband-gold: #fbbe0f;
 
-.title, .subtitle, h2, .link {
+.title, .subtitle, h2, .more.link {
     font-family: "Trajan Pro", "Garamond", times, serif;
     color: @calband-blue;
     text-transform: uppercase;
@@ -156,18 +160,58 @@ h2 {
     margin: 10px 0;
 }
 
+@tumblr-icon-color: #bbb;
+@tumblr-icon-font-size: 21px;
+@tumblr-reblog-like-height: 20px;
 .post {
     margin-bottom: 50px;
-    .video {
+
+    a {
+        color: inherit;
+    }
+
+    // for reblogs
+    blockquote {
+        border-left: 1px solid #bbb;
+        padding-left: 20px;
+        
+        p {
+            color: lighten(@post-text-color, 30%);
+        }
+    }
+
+    .video, .photo {
         display: block;
         width: 100%;
         border-left: 1px solid #eee;
         border-right: 1px solid #eee;
         margin-bottom: 30px;
+        text-align: center;
+    }
 
-        iframe {
-            display: block;
-            margin: 0 auto;
+    .tags {
+        display: block;
+        color: @calband-blue;
+        margin-bottom: 10px;
+
+        .tag {
+            display: inline-block;
+            .height(20px);
+            font-size: 12px;
+            font-family: @sans;
+
+            a {
+                color: inherit;
+                text-decoration: none;
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+
+            &:before {
+                content:"#";
+            }
         }
     }
 
@@ -177,13 +221,40 @@ h2 {
 
         .info-inner {
             display: inline-block;
+            vertical-align: top;
             margin-right: 20px;
-            .height(30px);
+            .height(@tumblr-reblog-like-height);
             font-size: 11px;
             font-family: @sans;
+            color: @tumblr-icon-color;
+
+            a {
+                color: inherit;
+                text-decoration: none;
+                text-transform: inherit;
+                cursor: inherit;
+                vertical-align: top;
+
+                &:hover {
+                    text-decoration: underline;
+                    cursor: pointer;
+                }
+
+                &.underline {
+                    text-decoration: underline;
+
+                    &:hover {
+                        color: darken(@tumblr-icon-color, 10%);
+                    }
+                }
+            }
 
             &:last-child {
                 margin-right: 0;
+            }
+
+            i {
+                font-size: @tumblr-icon-font-size;
             }
         }
     }

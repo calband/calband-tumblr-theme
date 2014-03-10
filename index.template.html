@@ -7,7 +7,7 @@
             <meta name="description" content="{MetaDescription}" />
         {/block:Description}
         <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400' rel='stylesheet' type='text/css'>
-        <link rel="stylesheet" type='text/css' href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/3.2.1/css/font-awesome.min.css">
+        <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
         <style type="text/css">
             {!__COMPILE_CSS}
         </style>
@@ -16,7 +16,7 @@
     <div class="wrap">
         <div class="left">
             <div class="header">
-                <div class="title">the highstepper</div>
+                <div class="title"><a class="nostyle" href="{BlogURL}">the highstepper</a></div>
                 <div class="divider"></div>
                 <div class="subtitle">cal band's official blog</div>
             </div> 
@@ -55,7 +55,7 @@
             {block:Posts}
                 <div class="post">
                     {block:Video}
-                        <h2>Video</h2>
+                        <h2></h2>
                         <div class="video">{Video-500}</div>
                         {block:Caption}
                             <div class="caption main-paragraph-container">{Caption}</div>
@@ -67,16 +67,36 @@
                         {/block:Title}
                         <div class="content main-paragraph-container">{Body}</div>
                     {/block:Text}
+                    {block:Photo}
+                        <h2></h2>
+                        <div class="photo">{LinkOpenTag}<img alt="{PhotoAlt}" src="{PhotoURL-500}">{LinkCloseTag}</div>
+                        {block:Caption}
+                            <div class="caption main-paragraph-container">{Caption}</div>
+                        {/block:Caption}
+                    {/block:Photo}
+                    {block:HasTags}
+                        <div class="tags">
+                            {block:Tags}
+                                <div class="tag"><a href="{TagURLChrono}">{Tag}</a></div>
+                            {/block:Tags}
+                        </div>
+                    {/block:HasTags}
                     <div class="info">
                         {block:Date}
-                            <div class="info-inner date"><i class="fa-clock-o"></i>{TimeAgo}</div>
+                            <div class="info-inner date"><i class="fa fa-clock-o"></i>&nbsp;&nbsp;{TimeAgo}</div>
                         {/block:Date}
                         <div class="info-inner like">{LikeButton}</div>
                         <div class="info-inner reblog">{ReblogButton}</div>
+                        <div class="info-inner link">
+                            {block:NotReblog}
+                                <i class="fa fa-link"></i>&nbsp;&nbsp;<a href="{Permalink}">{ShortURL}</a>
+                            {/block:NotReblog}
+                            {block:RebloggedFrom}
+                                reblogged from <a class="underline" href="{ReblogParentURL}">{ReblogParentName}</a>
+                            {/block:RebloggedFrom}
+
+                        </div>
                     </div>
-                    {block:HasTags}
-                        <div class="tags"></div>
-                    {/block:HasTags}
                 </div>
             {/block:Posts}
         </div>
