@@ -1,6 +1,6 @@
 # compile everything into the index.html file
 # for max efficiency, compile right into the clipboard for pasting into tumblr:
-# python compile.py && cat index.html | pbcopy
+# python compile.py && cat compiled/index.html | pbcopy
 
 import os
 import pystache
@@ -16,14 +16,14 @@ def write_file(filename, content):
 
 class Index(object):
 	def css(self):
-		return read_file("styles.css")
+		return read_file("css/styles.css")
 
 def main():
-	os.system("lessc -x styles.less styles.css")
+	os.system("lessc -x css/styles.less css/styles.css")
 	template_instance = Index()
-	renderer = pystache.Renderer()
+	renderer = pystache.Renderer(search_dirs="template")
 	content = renderer.render(template_instance)
-	write_file("index.html", content)
+	write_file("compiled/index.html", content)
 	print "done"
 
 if __name__ == '__main__':
